@@ -11,13 +11,15 @@ import com.loja_virtual.model.Product;
 import com.loja_virtual.repository.OrderItemRepository;
 import com.loja_virtual.repository.ProductRepository;
 
+// TODO André Gomes: Os serviçoes não devem enviar as entidades mas sim DTOs. Por exemplo, ver ModelMapper (https://www.baeldung.com/java-modelmapper)
+
 @Service
 public class OrderItemService {
 
     @Autowired
     private OrderItemRepository orderItemRepository;
     @Autowired
-    private ProductRepository productService;
+    private ProductRepository productService; // TODO: Mudar o nome para repository 
     
     public List<OrderItem> getAllOrderItems() {
         return orderItemRepository.findAll();
@@ -34,6 +36,7 @@ public class OrderItemService {
                 orderItem.setTotalPrice(updatedOrderItem.getTotalPrice());
                 return orderItemRepository.save(orderItem);
             }
+            // TODO André Gomes atenção aos nulls, no Controller estamos a validar?
             return null;
     }
 

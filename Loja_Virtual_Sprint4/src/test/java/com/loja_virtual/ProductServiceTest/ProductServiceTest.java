@@ -15,6 +15,8 @@ import com.loja_virtual.model.Product;
 import com.loja_virtual.repository.ProductRepository;
 import com.loja_virtual.service.ProductService;
 
+// TODO os packages dos teste devem ser os mesmos das classes que estamos a testar, para ser mais fácil de leitura e de preferência uma classe para cada metodo
+
 public class ProductServiceTest {
 
 	@MockBean

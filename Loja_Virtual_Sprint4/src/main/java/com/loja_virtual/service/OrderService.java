@@ -13,6 +13,8 @@ import com.loja_virtual.repository.ClientRepository;
 import com.loja_virtual.repository.OrderItemRepository;
 import com.loja_virtual.repository.OrderRepository;
 
+//TODO André Gomes: Os serviçoes não devem enviar as entidades mas sim DTOs. Por exemplo, ver ModelMapper (https://www.baeldung.com/java-modelmapper)
+
 @Service
 public class OrderService {
 
@@ -35,6 +37,7 @@ public class OrderService {
             order.setNumber(orderRequest.getNumber());
             order.setCreationDate(LocalDate.now());
             order.setClient(client);
+            // TODO Não conseguimos utilizar os streams do Java 8?
             for(int i=0;i<orderRequest.getOrderitems().size();i++) {
             	OrderItem orderItem = orderItemRepository.findById(orderRequest.getOrderitems().get(i)).orElse(null);
             	orderItem.setOrder(order);

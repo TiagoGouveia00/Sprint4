@@ -9,6 +9,9 @@ import com.loja_virtual.model.Product;
 import com.loja_virtual.repository.ProductRepository;
 
 import lombok.AllArgsConstructor;
+
+// TODO André Gomes: Os serviçoes não devem enviar as entidades mas sim DTOs. Por exemplo, ver ModelMapper (https://www.baeldung.com/java-modelmapper)
+
 @AllArgsConstructor
 @Service
 public class ProductService {
@@ -20,6 +23,7 @@ public class ProductService {
 
 		List<Product> products1 = new ArrayList<>();
 
+		// TODO ver ModelMapper
 		for (Product x : products) {
 			Product P = new Product((long) 0, x.getName(), x.getCode(), x.getPrice());
 			products1.add(P);

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import com.loja_virtual.model.Client;
 import com.loja_virtual.repository.ClientRepository;
 
+// TODO André Gomes: Os serviçoes não devem enviar as entidades mas sim DTOs. Por exemplo, ver ModelMapper (https://www.baeldung.com/java-modelmapper)
+
 @Service
 public class ClientService {
 
